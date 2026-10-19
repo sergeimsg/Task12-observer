@@ -1,6 +1,9 @@
 package com.task;
 
 
+import com.task.comparator.FirstDigitComparatot;
+import com.task.comparator.IdComparator;
+import com.task.comparator.LengthComparator;
 import com.task.entity.IntegerArray;
 import com.task.exception.ArrayUserException;
 import com.task.factory.ArrayFactory;
@@ -21,6 +24,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -81,6 +85,17 @@ public class ApplicationRun {
         logger.info("Total arrays created: {}", arrays.size());
         logger.debug("We have array: {}",arrays.toString());
         showRepository();
+        Comparator<IntegerArray> comparator = new LengthComparator();
+
+        int firstDigitCompare = comparator.compare(arrayRepository.findAll().get(0), arrayRepository.findAll().get(3));
+        logger.info("---------------------------");
+        arrayRepository.findAll().get(0).setValue(0,10);
+        logger.info(arrayRepository.findAll().get(0).getData()[0]);
+        //arrayRepository.sort(ompare(arrayRepository.findAll().get(1), arrayRepository.findAll().get(3)));
+        arrayRepository.sort(comparator);
+        logger.info("First digit compare{}", firstDigitCompare);
+        showRepository();
+
 
         /**
 
