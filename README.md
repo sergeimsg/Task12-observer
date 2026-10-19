@@ -6,14 +6,24 @@
 task-array/
 ├── pom.xml
 ├── src/main/java/com/task/
+│   ├── comparator/      — 
+│     └── FirstDigitComparator.java — Comparator by first dijit
+│     └── IdComparator.java — Comparator by Id number
+│     └── LengthComparator.java — Comparator by length
 │   ├── entity/          — AbstractArray, IntegerArray
 │   ├── exception/       — ArrayException
 │   ├── factory/         — ArrayFactory, IntegerArrayFactory (Factory Method)
+│   ├── observer/      — 
+│     └── ArrayObservable.java — Observable
+│     └── ArrayObserver.java —  
 │   ├── parser/          — ArrayParser, ArrayParserImpl
 │   ├── reader/          — DataReader, DataReaderImpl
+│   ├── repository/      — Repository, RepositoryImpl
 │   ├── service/         — ArrayService, ArrayServiceImpl
+│   ├── util/            — IdGeneration
 │   ├── validator/       — ArrayValidator, ArrayValidatorImpl
-│   └── Main.java        — Application entry point
+│   ├── Warehaouse/      — Warehouse
+│   └── ApplicationRun.java  — Application entry point
 ├── src/main/resources/
 │   ├── data/
 │     └── array_data.txt — Input data (mix of valid and invalid lines)
