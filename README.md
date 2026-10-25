@@ -47,4 +47,4 @@ task-array/
 
 ```bash
 mvn clean package
-java -cp target/Task12-observer-1.0-SNAPSHOT.jar com.task.Main``
+java -cp target/Task12-observer-1.0-SNAPSHOT.jar com.innow.Main``
